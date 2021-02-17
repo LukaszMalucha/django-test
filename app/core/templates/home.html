@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% load staticfiles %}
+
+
+{% block content %}
+
+<div id="page-index">
+  <div class="dashboard-cards">
+
+    <div class="row plain-element">
+      {% for element in messages %}
+      <h5> {{ element }} </h5>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+
+  {% endblock %}
