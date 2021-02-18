@@ -128,6 +128,18 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'db',
+#         'USER': 'XXX@XXX',
+#         'PASSWORD': 'XXXX',
+#         'HOST': 'XXX',
+#         'PORT': 5432,
+#     }
+# }
+
+
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -180,8 +192,8 @@ DEFAULT_FILE_STORAGE = "azure.storage_backends.PublicMediaStorage"
 
 
 
-# SECURE_SSL_REDIRECT = True
-# SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 
