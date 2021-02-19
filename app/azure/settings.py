@@ -205,7 +205,7 @@ AUTH_ADFS = {
     'CLIENT_SECRET': os.environ.get("AZURE_SECRET"),
     'CLAIM_MAPPING': {'first_name': 'given_name',
                       'last_name': 'family_name',
-                      'email': 'upn'},
+                      'email': 'email'},
     'GROUPS_CLAIM': 'roles',
     'MIRROR_GROUPS': True,
     'USERNAME_CLAIM': 'upn',
