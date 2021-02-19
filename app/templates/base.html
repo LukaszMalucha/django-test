@@ -44,6 +44,12 @@
     </div>
     <div class="col s4 m5 l4 plain-element right-align">
       <ul class="nav navbar-top-links navbar-right">
+        <li><span><a href="{% url 'django_auth_adfs:logout' %}">Logout</a></span>
+          </li>
+        <li><span><a href="{% url 'django_auth_adfs:login' %}">Login</a></span>
+          </li>
+        <li><span><a href="{% url 'django_auth_adfs:login-no-sso' %}">Login (no SSO)</a></span>
+          </li>
         {% if user.is_authenticated %}
           <li>
             <form method="post" action="{% url 'account_logout' %}">

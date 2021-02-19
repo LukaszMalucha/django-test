@@ -8,4 +8,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('auth/', include('dj_rest_auth.urls')),
     path("", include("core.urls")),
+    path('oauth2/', include('django_auth_adfs.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

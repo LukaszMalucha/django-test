@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "dj_rest_auth.registration",
+    'django_auth_adfs',
 
     "webpack_loader",
 
@@ -98,6 +99,7 @@ USE_TZ = True
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
+    'django_auth_adfs.backend.AdfsAuthCodeBackend',
 ]
 
 
@@ -192,21 +194,27 @@ DEFAULT_FILE_STORAGE = "azure.storage_backends.PublicMediaStorage"
 
 
 
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+# SECURE_SSL_REDIRECT = True
+# SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+#
 
 
+AUTH_ADFS = {
+    'AUDIENCE': os.environ.get("AZURE_CLIENT_ID"),
+    'CLIENT_ID': os.environ.get("AZURE_CLIENT_ID"),
+    'CLIENT_SECRET': os.environ.get("AZURE_SECRET"),
+    'CLAIM_MAPPING': {'first_name': 'given_name',
+                      'last_name': 'family_name',
+                      'email': 'upn'},
+    'GROUPS_CLAIM': 'roles',
+    'MIRROR_GROUPS': True,
+    'USERNAME_CLAIM': 'upn',
+    'TENANT_ID': os.environ.get("AZURE_TENANT_ID"),
+    'RELYING_PARTY_ID': os.environ.get("AZURE_CLIENT_ID"),
+}
 
 
-
-
-
-
-
-
-
-
-
+LOGIN_URL = "django_auth_adfs:login"
 
 
 
