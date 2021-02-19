@@ -1,5 +1,5 @@
 import os
-import env
+# import env
 import dj_database_url
 
 
@@ -215,7 +215,4 @@ AUTH_ADFS = {
 
 
 LOGIN_URL = "django_auth_adfs:login"
-
-
-
 
