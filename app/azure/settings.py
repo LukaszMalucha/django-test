@@ -208,7 +208,7 @@ AUTH_ADFS = {
                       'email': 'email'},
     'GROUPS_CLAIM': 'roles',
     'MIRROR_GROUPS': True,
-    'USERNAME_CLAIM': 'upn',
+    'USERNAME_CLAIM': 'email',
     'TENANT_ID': os.environ.get("AZURE_TENANT_ID"),
     'RELYING_PARTY_ID': os.environ.get("AZURE_CLIENT_ID"),
 }
