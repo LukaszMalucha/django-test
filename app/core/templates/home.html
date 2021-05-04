@@ -10,6 +10,11 @@
       {% for element in messages %}
       <h5> {{ element }} </h5>
       {% endfor %}
+      <h1> USER </h1>
+      {% if user.is_authenticated %}
+      <h2>  {{ user }}</h2>
+      {% endif %}
+
 
     </div>
   </div>
