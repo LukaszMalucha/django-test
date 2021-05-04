@@ -204,10 +204,11 @@ AUTH_ADFS = {
     'CLIENT_ID': os.environ.get("AZURE_CLIENT_ID"),
     'CLIENT_SECRET': os.environ.get("AZURE_SECRET"),
     'CLAIM_MAPPING': {'first_name': 'given_name',
-                      'last_name': 'family_name'},
+                      'last_name': 'family_name',
+                      'principal_name': 'upn'},
     'GROUPS_CLAIM': 'roles',
     'MIRROR_GROUPS': True,
-    'USERNAME_CLAIM': 'given_name',
+    'USERNAME_CLAIM': 'principal_name',
     'TENANT_ID': os.environ.get("AZURE_TENANT_ID"),
     'RELYING_PARTY_ID': os.environ.get("AZURE_CLIENT_ID"),
 }
