@@ -1,14 +1,21 @@
 import os
-# import env
+import environ
 import dj_database_url
+
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+"""
+INITIATING ENVIRONMENTAL VARIABLES
+"""
+
+env = environ.Env(DEBUG=(bool, False))
+environ.Env.read_env()
 
 DEBUG = True
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = "asdzxc"
 ALLOWED_HOSTS = ["*"]
 
 
@@ -194,8 +201,8 @@ DEFAULT_FILE_STORAGE = "azure.storage_backends.PublicMediaStorage"
 
 
 
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+# SECURE_SSL_REDIRECT = True
+# SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 
@@ -206,7 +213,7 @@ AUTH_ADFS = {
     'CLAIM_MAPPING': {'first_name': 'given_name',
                       'last_name': 'family_name',
                       },
-    'USERNAME_CLAIM': 'upn',
+    'USERNAME_CLAIM': 'email',
     'GROUPS_CLAIM': 'roles',
     'MIRROR_GROUPS': True,
     'TENANT_ID': os.environ.get("AZURE_TENANT_ID"),
@@ -216,3 +223,4 @@ AUTH_ADFS = {
 
 LOGIN_URL = "django_auth_adfs:login"
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
