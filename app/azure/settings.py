@@ -206,6 +206,7 @@ AUTH_ADFS = {
     'MIRROR_GROUPS': True,
     'TENANT_ID': os.environ.get("AZURE_TENANT_ID"),
     'RELYING_PARTY_ID': os.environ.get("AZURE_CLIENT_ID"),
+    'CUSTOM_FAILED_RESPONSE_VIEW': "core:failed_response",
 }
 
 
