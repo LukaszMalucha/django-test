@@ -200,7 +200,7 @@ AUTH_ADFS = {
     'CLAIM_MAPPING': {'first_name': 'given_name',
                       'last_name': 'family_name',
                       },
-    'USERNAME_CLAIM': 'email', #???
+    'USERNAME_CLAIM': os.environ.get("AZURE_USERNAME_CLAIM"),
     'GROUPS_CLAIM': 'roles',
     'MIRROR_GROUPS': True,
     'TENANT_ID': os.environ.get("AZURE_TENANT_ID"),
