@@ -201,6 +201,7 @@ AUTH_ADFS = {
                       'last_name': 'family_name',
                       },
     'USERNAME_CLAIM': os.environ.get("AZURE_USERNAME_CLAIM"),
+    'GUEST_USERNAME_CLAIM': os.environ.get("AZURE_GUEST_USERNAME_CLAIM"),
     'GROUPS_CLAIM': 'roles',
     'MIRROR_GROUPS': True,
     'TENANT_ID': os.environ.get("AZURE_TENANT_ID"),
